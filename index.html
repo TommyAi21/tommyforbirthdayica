@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Selamat Ulang Tahun, Icaaa! 🎂</title>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background: linear-gradient(135deg, #fdfbfb 0%, #f5ebe0 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+      color: #4a3f35;
+    }
+    .kartu {
+      background: #fffdf9;
+      padding: 32px 25px;
+      border-radius: 18px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+      max-width: 380px;
+      width: 100%;
+      border: 1px solid #e6ccb2;
+    }
+    .bingkai-foto {
+      background: white;
+      padding: 10px 10px 25px 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      border-radius: 6px;
+      display: inline-block;
+      margin-bottom: 18px;
+      transform: rotate(-2deg);
+    }
+    img {
+      width: 220px;
+      height: 270px;
+      object-fit: cover;
+      border-radius: 4px;
+      display: block;
+    }
+    h2 {
+      margin: 8px 0 4px 0;
+      color: #9c6644;
+      font-size: 22px;
+    }
+    .nama-penerima {
+      font-size: 18px;
+      font-weight: bold;
+      color: #7f5539;
+      margin-bottom: 16px;
+    }
+    .ucapan {
+      font-size: 15px;
+      line-height: 1.65;
+      color: #5c4d3c;
+      text-align: center;
+    }
+    .ucapan p {
+      margin: 0 0 14px 0;
+    }
+    .penutup-cinta {
+      font-weight: bold;
+      color: #9c6644;
+      font-size: 16px;
+    }
+    button {
+      background-color: #b08968;
+      color: white;
+      border: none;
+      padding: 13px 26px;
+      font-size: 16px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-family: sans-serif;
+      box-shadow: 0 4px 10px rgba(176, 137, 104, 0.4);
+      transition: transform 0.2s;
+    }
+    button:active {
+      transform: scale(0.96);
+    }
+    #isi-ucapan {
+      display: none;
+      animation: muncul 0.8s ease;
+    }
+    @keyframes muncul {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="kartu">
+    <!-- Tampilan Awal -->
+    <div id="halaman-depan">
+      <h2>Ada Pesan Spesial Buat Kamu ✉️</h2>
+      <p>Untuk <strong>Anisya Dwi Asmiyati</strong>, tekan tombol di bawah untuk membuka kartu ucapanmu.</p>
+      <br>
+      <button onclick="bukaKartu()">Buka Kartu 🎂</button>
+    </div>
+
+    <!-- Isi Kartu Ucapan -->
+    <div id="isi-ucapan">
+      <div class="bingkai-foto">
+        <!-- Pastikan nama file & ekstensi (.jpg atau .png) sama persis dengan di GitHub -->
+        <img src="foto-ultah.jpg" alt="Foto Masa Kecil Anisya">
+      </div>
+      <h2>Selamat Ulang Tahun! 🎉</h2>
+      <div class="nama-penerima">Anisya Dwi Asmiyati</div>
+      
+      <div class="ucapan">
+        <p>
+          Selamat ulang tahun ya, icaaa! Terima kasih sudah tumbuh jadi perempuan hebat, 
+          baik hati, dan selalu membawa kebahagiaan di hidupku.
+        </p>
+        <p>
+          Doa terbaik untukmu: Semoga di usia yang baru ini kamu selalu diberikan kesehatan, 
+          dimudahkan segala urusannya, impian-impian hebatmu tercapai satu persatu, Amiiinnnn.
+        </p>
+        <p class="penutup-cinta">I love you! ✨💖</p>
+      </div>
+    </div>
+
+    <!-- Pemutar Lagu Otomatis Saat Tombol Diklik -->
+    <audio id="lagu" loop>
+      <source src="lagu-ultah.mp3" type="audio/mpeg">
+    </audio>
+  </div>
+
+  <script>
+    function bukaKartu() {
+      document.getElementById('halaman-depan').style.display = 'none';
+      document.getElementById('isi-ucapan').style.display = 'block';
+      document.getElementById('lagu').play();
+    }
+  </script>
+
+</body>
+</html>
